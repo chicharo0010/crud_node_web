@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+</head>
+<body>
+    <h1>Agregar Usuario</h1>
+    <form action="/agregarUsuario" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h1>Lista de Usuarios</h1>
+    <button onclick="window.location.href='/obtenerusuario';">Obtener Usuarios</button>
+    <br><br>
+
+
+
+    <div id="user-list">
+        <!-- Aquí se mostrará la lista de usuarios después de redirigir a /obtenerusuario -->
+        <h2>Lista de Usuarios</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+            </tr>
+            <!-- Este contenido se llenará cuando se redirija a la página /obtenerusuario -->
+        </table>
+    </div>
+
+    <form action="/borrarUsuario" method="POST">
+        <label>Id del que se desea eliminar:</label>
+        <input type="text" id="id" name="id" required><br><br>
+        <button type="submit">Eliminar</button>
+    </form>
+    
+    <br><br><br><br>
+
+    <form action="/actualizarUsuario" method="POST">
+        <label>Id del que se desea actualizar:</label><br><br>
+        <input type="text" id="id2" name="id2" required><br><br>
+        <input type="text" id="nombre2" name="nombre2" required><br><br>
+        <button type="submit">Actualizar</button>
+    </form>
+
+</body>
+</html>
